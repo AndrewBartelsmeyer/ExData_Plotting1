@@ -1,5 +1,5 @@
 # This script will read in a local file on household power consumption and 
-# create a plot of "frequency" vs "Global Active Power"
+# create a histogram of "Global Active Power"
 
 plot1 <- function(){
     
@@ -14,7 +14,8 @@ data <- read.csv("~/Coursera/ExpDataAnal/Project1/household_power_consumption.tx
 PowerData <- filter(data, Date == "1/2/2007" | Date == "2/2/2007")
 
 # Creates a histogram for Global Active Power and saves it to Plot1.png
-png('~/Coursera/ExpDataAnal/Project1/ExData_Plotting1/plot1.png')
+png(filename = '~/Coursera/ExpDataAnal/Project1/ExData_Plotting1/plot1.png', 
+    width = 480, height = 480)
 hist(PowerData$Global_active_power, col = "red", main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
 dev.off()
